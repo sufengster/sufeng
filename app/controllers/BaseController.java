@@ -15,7 +15,8 @@ public class BaseController extends Controller {
     protected static ThreadLocal<String> template = new ThreadLocal<String>();
     @Before
     static void getTemplatePath() {
-        System.out.println(Http.Request.current().headers.get("user-agent").value());
+        System.out.println(Http.Request.current().headers.get("User-Agent").value());
+        // test branch.
         template.set(Http.Request.current().controller+"/iphone/"+Http.Request.current().actionMethod+".html");  //get path
     }
 }
