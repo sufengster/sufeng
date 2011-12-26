@@ -16,7 +16,7 @@ public class BaseController extends Controller {
     @Before
     static void getTemplatePath() {
         System.out.println(Http.Request.current().headers.get("User-Agent").value());
-        // test branch.
+        // test branch.sufeng
         template.set(Http.Request.current().controller+"/iphone/"+Http.Request.current().actionMethod+".html");  //get path
     }
 }
