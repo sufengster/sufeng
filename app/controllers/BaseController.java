@@ -16,6 +16,6 @@ public class BaseController extends Controller {
     @Before
     static void getTemplatePath() {
         System.out.println(Http.Request.current().headers.get("user-agent").value());
-        template.set(Http.Request.current().controller+"/iphone/"+Http.Request.current().actionMethod+".html");
+        template.set(Http.Request.current().controller+"/iphone/"+Http.Request.current().actionMethod+".html");  //get path
     }
 }
