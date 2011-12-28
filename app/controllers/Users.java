@@ -7,5 +7,5 @@ package controllers;
  * Time: 下午3:15
  * To change this template use File | Settings | File Templates.
  */
-public class Users {
+public class Users extends BaseCRUD{
 }
