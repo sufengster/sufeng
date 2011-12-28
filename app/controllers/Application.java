@@ -1,16 +1,15 @@
 package controllers;
 
-import play.*;
-import play.mvc.*;
-
-import java.util.*;
-
-import models.*;
+//import models.*;
 
 public class Application extends BaseController {
-
+    //test
     public static void index() {
         render(template.get());
+    }
+
+    public static void register() {
+        render();
     }
 
 }
