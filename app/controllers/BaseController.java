@@ -25,6 +25,7 @@ public class BaseController extends Controller {
     }
 
     static String getVersion(){
+        //need judge from useragent
         return "iphone";
     }
 }
