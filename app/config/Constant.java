@@ -8,4 +8,5 @@ package config;
  * To change this template use File | Settings | File Templates.
  */
 public class Constant {
+    public static String SESSIONID = "user_id";
 }

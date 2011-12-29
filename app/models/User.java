@@ -8,7 +8,7 @@ package models;
  * To change this template use File | Settings | File Templates.
  */
 import play.data.validation.*;
-import play.db.jpa.Model;
+import play.db.jpa.*;
 
 import javax.persistence.Entity;
 
