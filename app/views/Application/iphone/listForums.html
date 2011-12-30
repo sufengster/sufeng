@@ -1,0 +1,21 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+*{#{welcome /}}*
+<div data-role="content">
+    #{if allforums}
+    <div class="content-primary">
+        <ul data-role="listview" data-inset="true" data-split-theme="d" data-count-theme="b">
+            #{list items:allforums, as:'forum'}
+            <li>
+                <a href="#">
+                    <h3>${forum.name}</h3>
+                    <span class="ui-li-count">12</span>
+                </a>
+            </li>
+            #{/list}
+        </ul>
+    </div>
+    #{/if}
+</div><!-- /content -->
+

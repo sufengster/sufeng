@@ -3,9 +3,12 @@ package controllers;
 //import models.*;
 
 import config.Constant;
+import models.Forum;
 import models.User;
 import play.cache.Cache;
 import play.data.validation.Valid;
+
+import java.util.List;
 
 public class Application extends BaseController {
     //test
@@ -22,7 +25,7 @@ public class Application extends BaseController {
             User user = User.find("byEmailAndPassword",email,password).first();
             if(user!=null){
                 session.put(Constant.SESSIONID,user.getId());
-//                render(getTemplatePath("index"));
+                checkSession();
                 redirect("Application.index");
             }
         }
@@ -32,6 +35,7 @@ public class Application extends BaseController {
     public static void logout() {
         session.clear();
 //        index();
+        checkSession();
         redirect("Application.index");
     }
 
@@ -46,6 +50,12 @@ public class Application extends BaseController {
         session.put(Constant.SESSIONID, user.getId());
         flash.success("Welcome, " + user.nickname);
         index();
+    }
+
+    public static void listForums(){
+        List<Forum> allForums = (List<Forum>) Cache.get(Constant.ALLFORUMS);
+        renderArgs.put("allforums",allForums);
+        render(template.get());
     }
     
 

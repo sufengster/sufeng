@@ -22,10 +22,10 @@ public class BaseController extends Controller {
         template.set(Http.Request.current().controller+"/"+getVersion()+"/"+Http.Request.current().actionMethod+".html");  //get path
     }
 
-    @After(only = {"login","logout"})
-    static void afterLoginLogout(){
-        checkSession();
-    }
+//    @After(only = {"login","logout"})
+//    static void afterLoginLogout(){
+//        checkSession();
+//    }
 
     static void checkSession(){
 

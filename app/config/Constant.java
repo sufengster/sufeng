@@ -9,4 +9,6 @@ package config;
  */
 public class Constant {
     public static String SESSIONID = "user_id";
+    public static String ALLFORUMS = "all_forums";
+    public static String FORUM = "forum_";
 }

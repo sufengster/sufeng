@@ -2,7 +2,7 @@
 #{set title:'Register' /}
 
     <div data-role="content">
-    #{form @saveUser()}
+        <form action="@{Application.saveUser()}" method="post" data-ajax="false">
         #{field 'user.email'}
             <p class="${field.errorClass}">
                 <strong>Email:</strong> <input type="text" name="${field.name}" size="16" value="${user?.email}">
@@ -31,8 +31,8 @@
             </p>
         #{/field}
         <p class="buttons">
-            <input type="submit" value="Register"> <a href="@{index()}">Cancel</a>
+            <input type="submit" value="注册">
         </p>
-    #{/form}
+    </form>
     </div>
     <!-- /content -->
