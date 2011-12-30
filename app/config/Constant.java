@@ -11,4 +11,8 @@ public class Constant {
     public static String SESSIONID = "user_id";
     public static String ALLFORUMS = "all_forums";
     public static String FORUM = "forum_";
+    public static String FORUMPOSTCOUNT = "forumpc_";
+
+    public static String ALLREGIONS = "all_regions";
+    public static String REGION = "region_";
 }

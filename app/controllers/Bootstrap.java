@@ -2,6 +2,7 @@ package controllers;
 
 import config.Constant;
 import models.Forum;
+import models.Region;
 import play.cache.Cache;
 import play.jobs.Job;
 import play.jobs.OnApplicationStart;
@@ -25,5 +26,15 @@ public class Bootstrap extends Job{
                 Cache.set(Constant.FORUM+f.getId(),f);
             }
         }
+
+        List<Region> allRegions = Region.findAll();
+        if(allRegions!=null && allRegions.size()>0){
+            Cache.set(Constant.ALLREGIONS, allRegions);
+            for(Region r: allRegions){
+                Cache.set(Constant.REGION+r.getId(),r);
+            }
+        }
+
+
     }
 }

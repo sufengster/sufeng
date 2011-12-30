@@ -2,6 +2,7 @@
 #{set title:'Login' /}
 
 <div data-role="content">
+    #{if flash.error}<div><p class="ui-body-e">${flash.error}</p><a data-theme="b" href="#" data-icon="alert" data-iconpos="right"></a></div>#{/if}
 *{#{form @Application.login(),method:'POST',id:'loginForm',data-ajax:"false"}}*
     <form action="@{Application.login()}" method="post" data-ajax="false">
         <p class="field">

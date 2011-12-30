@@ -1,0 +1,23 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+*{#{welcome /}}*
+<div data-role="content">
+    #{if posts}
+    <div class="content-primary">
+        <ul data-role="listview" data-inset="true" data-split-theme="d" data-count-theme="c">
+            #{list items:posts, as:'post'}
+            <li>
+                <a href="#">
+                    <h3>${post.title}</h3>
+                    <p>${post.content}</p>
+                    <p>${post.postedAt}</p>
+                </a>
+                *{<a data-icon="plus" data-iconpos="right" href="#">${post.author.nickname}</a>}*
+            </li>
+            #{/list}
+        </ul>
+    </div>
+    #{/if}
+</div><!-- /content -->
+

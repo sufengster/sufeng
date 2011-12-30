@@ -9,8 +9,10 @@ POST    /login                                  Application.login
 GET     /logout                                 Application.logout
 GET     /reg                                    Application.register
 POST    /saveuser                               Application.saveUser
-GET    /listforums                               Application.listForums
-
+GET    /listforums                              Application.listForums
+GET    /addpost/{fid}                                 Application.addPost
+GET    /forum/{fid}                                 Application.forum
+GET    /setting                                 Application.setting
 # Ignore favicon requests
 GET     /favicon.ico                            404
 

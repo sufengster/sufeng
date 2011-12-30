@@ -1,5 +1,5 @@
 #{extends 'main.html' /}
-#{set title:'Home' /}
+#{set title:'论坛' /}
 
 *{#{welcome /}}*
 <div data-role="content">
@@ -8,10 +8,11 @@
         <ul data-role="listview" data-inset="true" data-split-theme="d" data-count-theme="b">
             #{list items:allforums, as:'forum'}
             <li>
-                <a href="#">
+                <a href="@{Application.forum(forum.getId())}">
                     <h3>${forum.name}</h3>
-                    <span class="ui-li-count">12</span>
+                    <span class="ui-li-count">${forum.getPostCount()}</span>
                 </a>
+                <a data-icon="plus" data-iconpos="right" href="@{Application.addPost(forum.id)}">发新帖</a>
             </li>
             #{/list}
         </ul>

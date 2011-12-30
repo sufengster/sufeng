@@ -1,0 +1,31 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+*{#{welcome /}}*
+<div data-role="content">
+    <form action="@{Application.savePost()}" method="post" data-ajax="false">
+        #{field 'post.title'}
+            <p class="${field.errorClass}">
+                <strong>标题:</strong> <input type="text" name="${field.name}" size="16" value="${post?.title}">
+                <span class="error">${field.error}</span>
+            </p>
+        #{/field}
+        #{field 'post.content'}
+            <p class="${field.errorClass}">
+                <strong>内容:</strong> <textarea name="${field.name}" value="${post?.content}"></textarea>
+                <span class="error">${field.error}</span>
+            </p>
+        #{/field}
+        #{field 'post.forum'}
+            <input type="hidden" name="${field.name}.id" value="${fid}">
+        #{/field}
+        #{field 'post.author'}
+            <input type="hidden" name="${field.name}.id" value="${loginUser.id}">
+        #{/field}
+
+        <p class="buttons">
+            <input type="submit" value="发布新贴">
+        </p>
+    </form>
+</div><!-- /content -->
+

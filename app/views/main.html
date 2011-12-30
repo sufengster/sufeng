@@ -29,16 +29,17 @@
     #{/else}
 
 </div><!-- /header -->
-    <div data-role="navbar" data-iconpos="left" data-inset="true">
-    	<ul class="ui-grid-b">
-    		<li><a href="@{Application.listForums()}" data-ajax="false" class="ui-btn-active">论坛</a></li>
-    		<li><a href="b.html">Two</a></li>
-    		<li><a href="b.html">Two</a></li>
-    		<li><a href="b.html">Two</a></li>
-    	</ul>
-    </div>
+
 #{doLayout /}
 <div data-role="footer" data-theme="d">
+    <div data-role="navbar" data-iconpos="left" data-inset="true">
+    	<ul class="ui-grid-b">
+            <li><a href="b.html">周围</a></li>
+    		<li><a href="@{Application.listForums()}" data-ajax="false" class="ui-btn-active">论坛</a></li>
+    		<li><a href="b.html">标签</a></li>
+    		<li><a href="@{Application.setting()}">设置</a></li>
+    	</ul>
+    </div>
     <h4>Page Footer</h4>
 </div>
 <!-- /footer -->

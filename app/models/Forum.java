@@ -1,5 +1,7 @@
 package models;
 
+import config.Constant;
+import play.cache.Cache;
 import play.data.validation.Required;
 import play.db.jpa.Model;
 
@@ -18,6 +20,15 @@ public class Forum extends Model {
     public String name;
     @Required
     public Long parentid;
+
+    public long getPostCount(){
+        Long count = (Long) Cache.get(Constant.FORUMPOSTCOUNT + this.id);
+        if(count == null){
+            count = Post.count("byForum",this);
+            Cache.set(Constant.FORUMPOSTCOUNT+this.id,count);
+        }
+        return count;
+    }
 
     public String toString() {
         return name;

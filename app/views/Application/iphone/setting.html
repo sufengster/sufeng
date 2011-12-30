@@ -1,0 +1,20 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+*{#{welcome /}}*
+<div data-role="content">
+    <form>
+        <div data-role="fieldcontain">
+            <label for="region" class="select">你的地区:</label>
+            *{<input type="search" name="region" id="search" value="" />}*
+            <select id="region" name="region">
+                #{if regions}
+                  #{list items:regions, as:'region'}
+                  <option value="${region.id}">${region.name}</option>
+                  #{/list}
+                #{/if}
+               </select>
+        </div>
+    </form>
+</div><!-- /content -->
+

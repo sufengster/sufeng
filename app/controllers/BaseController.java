@@ -21,6 +21,14 @@ public class BaseController extends Controller {
         checkSession();
         template.set(Http.Request.current().controller+"/"+getVersion()+"/"+Http.Request.current().actionMethod+".html");  //get path
     }
+    @Before(only = {"Application.addPost","Application.savePost"})
+    static void mustLogin(){
+        String userid = session.get(Constant.SESSIONID);
+        if(userid == null){
+            flash.error("您还没有登录");
+            redirect("Application.login");
+        }
+    }
 
 //    @After(only = {"login","logout"})
 //    static void afterLoginLogout(){
@@ -35,9 +43,7 @@ public class BaseController extends Controller {
             renderArgs.put("loginUser",user);
         }else{
             renderArgs.put("loginUser",null);
-            System.out.println("put loginuser null");
         }
-        System.out.println("loginuser:"+userid);
     }
     
     static String getTemplatePath(String template){

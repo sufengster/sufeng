@@ -20,9 +20,10 @@ import java.util.List;
  */
 @Entity
 public class Post extends Model {
-    @Required
+    @Required(message="请填写标题")
+    @MaxSize(50)
     public String title;
-    @Required
+    @Required(message="说点什么吧")
     @MaxSize(20000)
     @Lob
     public String content;
