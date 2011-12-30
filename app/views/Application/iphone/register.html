@@ -1,0 +1,38 @@
+#{extends 'main.html' /}
+#{set title:'Register' /}
+
+    <div data-role="content">
+    #{form @saveUser()}
+        #{field 'user.email'}
+            <p class="${field.errorClass}">
+                <strong>Email:</strong> <input type="text" name="${field.name}" size="16" value="${user?.email}">
+                *
+                <span class="error">${field.error}</span>
+            </p>
+        #{/field}
+        #{field 'user.nickname'}
+            <p class="${field.errorClass}">
+                <strong>Nickname:</strong> <input type="text" name="${field.name}" size="16" value="${user?.nickname}"> *
+                <span class="error">${field.error}</span>
+            </p>
+        #{/field}
+        #{field 'user.password'}
+            <p class="${field.errorClass}">
+                <strong>Password:</strong> <input type="password" name="${field.name}" size="16"
+                                                  value="${user?.password}"> *
+                <span class="error">${field.error}</span>
+            </p>
+        #{/field}
+        #{field 'verifyPassword'}
+            <p class="${field.errorClass}">
+                <strong>Verify password:</strong> <input type="password" name="${field.name}" size="16"
+                                                         value="${verifyPassword}"> *
+                <span class="error">${field.error}</span>
+            </p>
+        #{/field}
+        <p class="buttons">
+            <input type="submit" value="Register"> <a href="@{index()}">Cancel</a>
+        </p>
+    #{/form}
+    </div>
+    <!-- /content -->

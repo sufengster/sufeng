@@ -1,0 +1,19 @@
+#{extends 'main.html' /}
+#{set title:'Login' /}
+
+    <div data-role="content">
+    #{form @login()}
+            <p class="field">
+                <strong>Email:</strong> <input type="text" name="email" size="16" value="${flash.email}">
+                *
+            </p>
+            <p class="field">
+                <strong>Password:</strong> <input type="password" name="password" size="16"
+                                                  value=""> *
+            </p>
+        <p class="buttons">
+            <input type="submit" value="Login"> <a href="@{index()}">Cancel</a>
+        </p>
+    #{/form}
+    </div>
+    <!-- /content -->
