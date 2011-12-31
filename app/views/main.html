@@ -5,6 +5,7 @@
     <title>#{get 'title' /}</title>
     <meta charset="${_response_encoding}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
     <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/jquery.mobile-1.0rc3.css'}">
 #{get 'moreStyles' /}
     <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
@@ -31,13 +32,13 @@
 </div><!-- /header -->
 
 #{doLayout /}
-<div data-role="footer" data-theme="d">
-    <div data-role="navbar" data-iconpos="left" data-inset="true">
-    	<ul class="ui-grid-b">
-            <li><a href="b.html">周围</a></li>
-    		<li><a href="@{Application.listForums()}" data-ajax="false" class="ui-btn-active">论坛</a></li>
-    		<li><a href="b.html">标签</a></li>
-    		<li><a href="@{Application.setting()}">设置</a></li>
+<div data-role="footer" data-theme="d" class="nav-glyphish">
+    <div data-role="navbar" class="nav-glyphish" data-grid="c">
+    	<ul class="ui-grid-c">
+            <li><a href="b.html" id="map" data-icon="custom">周围</a></li>
+    		<li><a href="@{Application.listForums()}" data-ajax="false" id="group" data-icon="custom" class="ui-btn-active">论坛</a></li>
+    		<li><a href="b.html" id="chat" data-icon="custom">标签</a></li>
+    		<li><a href="@{Application.setting()}" id="setting" data-icon="custom">设置</a></li>
     	</ul>
     </div>
     <h4>Page Footer</h4>

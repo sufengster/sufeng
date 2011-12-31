@@ -9,7 +9,7 @@
             #{list items:posts, as:'post'}
             <li>
                 <a href="#">
-                    <h3>${post.title}</h3>
+                    <h3>${post.title} [${post.author.nickname}]</h3>
                     <p>${post.content}</p>
                     <p>${post.postedAt}</p>
                 </a>

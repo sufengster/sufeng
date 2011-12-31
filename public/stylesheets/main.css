@@ -173,3 +173,11 @@ form .buttons {
     border-top: 1px dotted #ccc;
     text-align: center;
 }
+
+
+.nav-glyphish .ui-btn .ui-btn-inner { padding-top: 40px !important; }
+.nav-glyphish .ui-btn .ui-icon { width: 30px!important; height: 30px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: 0 !important; border-radius: 0 !important; }
+#chat .ui-icon { background:  url(/public/images/icons/09-chat-2.png) 50% 50% no-repeat; background-size: 24px 22px; }
+#map .ui-icon { background:  url(/public/images/icons/07-map-marker.png) 50% 50% no-repeat; background-size: 24px 22px;  }
+#group .ui-icon { background:  url(/public/images/icons/112-group.png) 50% 50% no-repeat;  background-size: 24px 22px; }
+#setting .ui-icon { background:  url(/public/images/icons/19-gear.png) 50% 50% no-repeat;  background-size: 24px 22px; }
